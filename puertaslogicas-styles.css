@@ -1,0 +1,99 @@
+.puerta .container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #a8c9d3;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 0;
+}
+
+.puerta .gate-container {
+    display: inline-block;
+    padding: 30px;
+    width: 500px;
+    height: 300px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.puerta .gate-container > div {
+    margin-bottom: 20px;
+}
+
+.puerta .gate {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.puerta .inputs, .puerta .output {
+    margin-bottom: 10px;
+}
+
+.puerta .gate img {
+    width: 250px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    margin-left: 120px;
+}
+
+.puerta .checkbox-label {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-right: 20px;
+    font-size: 18px; 
+    color: #333; 
+    font-weight: bold; 
+    margin-bottom: 10px;
+}
+
+.puerta .checkbox-label input[type="checkbox"] {
+    margin-right: 20px;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.puerta .checkbox-label span {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.puerta button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.puerta button:hover {
+    background-color: #0056b3;
+}
+
+.puerta .output {
+    font-size: 20px; /* Ajusta el tamaño del texto según sea necesario */
+    font-weight: bold; /* Haz que el texto sea más audaz para que se destaque */
+    color: #007bff; /* Cambia el color del texto para que sea más visible */
+    background-color: #f0f0f0; /* Agrega un fondo para resaltar el output */
+    padding: 10px; /* Agrega un espacio alrededor del texto */
+    border-radius: 5px; /* Redondea las esquinas del output */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra para dar profundidad */
+}
+
+
+.puerta h1 {
+    margin-bottom: 20px;
+    color: #000000; 
+}

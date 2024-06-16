@@ -1,0 +1,97 @@
+.controlador-pid-container .container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #a8c9d3;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.controlador-pid-container h1 {
+    text-align: center;
+    color: #000000;
+}
+
+.controlador-pid-container .pid-controls {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #0885ac;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.controlador-pid-container .control-group {
+    margin-bottom: 15px;
+}
+
+.controlador-pid-container label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.controlador-pid-container input {
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.controlador-pid-container input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.controlador-pid-container .boton {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.controlador-pid-container .boton-primero {
+    color: #fff;
+    background-color: #30c922;
+    border: 2px solid #0a6601;
+}
+
+.controlador-pid-container .boton-primero:hover {
+    background-color: #95ff7a;
+}
+
+.controlador-pid-container .boton-segundo {
+    color: #dfdfdf;
+    background-color: #b62525;
+    border: 2px solid #690000;
+}
+
+.controlador-pid-container .boton-segundo:hover {
+    background-color: #fd4848;
+}
+
+.controlador-pid-container .boton-tercero {
+    color: #dfdfdf;
+    background-color: #2146c0;
+    border: 2px solid #042366;
+}
+
+.controlador-pid-container .boton-tercero:hover {
+    background-color: #495bfd;
+}
+
+.controlador-pid-container .botones {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.controlador-pid-container .chart-container {
+    text-align: center;
+}

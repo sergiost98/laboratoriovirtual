@@ -1,0 +1,57 @@
+/* Estilos para el párrafo horizontal */
+.inicio .container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #a8c9d3;
+    display: flex;
+    flex-direction: column;
+}
+
+.inicio h1 {
+    text-align: center;
+    color: #000000;
+}
+
+.inicio .horizontal-paragraph {
+    display: flex;
+    justify-content: center; 
+}
+
+.inicio .horizontal-paragraph p {
+    width: 80%; 
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Estilos para los párrafos verticales */
+.inicio .vertical-paragraphs {
+    display: flex;
+    justify-content: space-around; 
+    margin-top: 20px; /
+}
+
+.inicio .vertical-paragraph {
+    width: 30%;
+    text-align: center; 
+    margin: 0 auto; 
+    padding: 10px; 
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+.inicio .vertical-paragraph h2 {
+    margin-bottom: 10px; 
+}
+
+.inicio .vertical-paragraph::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -1px; /* Ajusta el valor para posicionar correctamente la línea */
+    width: 2px; /* Ancho de la línea vertical */
+    background-color: #000; /* Color de la línea vertical */
+}

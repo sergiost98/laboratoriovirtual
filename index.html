@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LABORATORIO VIRTUAL</title>
+
+    <link rel="stylesheet" href="styles.css">
+	<script src="./script1.js" defer></script>
+
+    <link rel="stylesheet" href="inicio-styles.css">
+    <link rel="stylesheet" href="controlador-pid-styles.css">
+    <link rel="stylesheet" href="puertaslogicas-styles.css">
+    <link rel="stylesheet" href="filtro-styles.css">
+
+</head>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="title">
+            <h1>LABORATORIO VIRTUAL</h1>
+        </div>
+        <div class="menu">
+		    <p data-target="#inicio">Inicio</p>
+		    <p data-target="#controlador-pid">Controlador PID</p>
+		    <p data-target="#filtro">Filtros</p>
+            <p data-target="#puertaslogicas">Puertas Logicas</p>
+	    </div>
+    </div>
+
+    <div class="content">       
+
+        <div data-content id="inicio" class="active inicio">
+            <div class="container">
+            <h1>INICIO</h1>
+            <div class="horizontal-paragraph">
+                <p>BIENVENIDO AL LABORATORIO VIRTUAL. <br> <br> Esta es una página web creada con la funcion de apoyar a la docencia en temas <br> relacionados con los sistemas de control y la electrónica.
+                En esta página encontrarás <br> tres apartados interactivos, el primero relacionado con controladores PID, el segundo <br> con filtros pasivos y el tercero con puertas lógicas. A continuación 
+                se explicara <br> brevemente cada apartado y sus funcionalidades. <br> <br> Gacias por su visita.</p>
+            </div>
+            <hr>
+        
+            <div class="vertical-paragraphs">
+                <div class="vertical-paragraph">
+                    <h2>Controlador PID</h2>
+                    <p> En este apartado podrá encontrar con una simulación de un sistema de segundo orden sobreamortiguado controlado por un PID. A la hora de realizar esta simulación puedes modificar
+                        los valores de Kp, Ki, Kd y el Setpoint. A base de modificar estas variables podrás encontrar los valores que consigan que la salida del sistema se ajuste lo máximo posible
+                        al Setpoint sin llegar a que el sistema sea inestable.
+                    </p>
+                </div>
+                <hr>
+                <div class="vertical-paragraph">
+                    <h2>Filtros</h2>
+                    <p>En este apartado se puede calcular las frecuencias de corte de tres tipos de filtros pasivos diferentes. Para hacer esto, primero se deberá introducir los datos de 
+                        las resistencias y capacitancias correspondientes al filtro deseado y después hacer click en el botón de 'Calcular' de dicho filtro. Tras esto, aparecerá la frecuencia 
+                        o frecuencia de corte debajo del botón.
+                    </p>
+                </div>
+                <hr>
+                <div class="vertical-paragraph">
+                    <h2>Puertas Logicas</h2>
+                    <p>En este apartado se puede observar el funcionamiento de varias puertas lógicas, para esto primero se selecciona la puerta que se desea visualizar. Tras esto, aparecerá en 
+                        pantalla la puerta seleccionada y debajo de ella las entradas con unas cajas clickeables. Al clickear en cada caja se cambia el valor de la entrada y se pueden observar
+                        el cambio de la salida.
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div data-content id="controlador-pid" class="controlador-pid-container">
+            <div class="container">
+                <h1>CONTROLADOR PID</h1>
+
+                <!-- Controles del PID -->
+                <div class="pid-controls">
+                    <div class="control-group">
+                        <label for="kp">Kp:</label>
+                        <input type="number" id="kp" step="0.1" value="1.0">
+                    </div>
+                
+                    <div class="control-group">
+                        <label for="ki">Ki:</label>
+                        <input type="number" id="ki" step="0.1" value="0.1">
+                    </div>
+                
+                    <div class="control-group">
+                        <label for="kd">Kd:</label>
+                        <input type="number" id="kd" step="0.01" value="0.01">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="Setpoint">Setpoint:</label>
+                        <input type="number" id="Setpoint" step="0.1" value="1">
+                    </div>
+                </div>
+
+                <div class="botones">
+                    <button class="boton boton-primero" onclick="startSimulation()">Iniciar Simulación</button>
+                    <button class="boton boton-segundo" onclick="stopSimulation()">Detener Simulación</button>
+                    <button class="boton boton-tercero" onclick="resetGraph()">Resetear Gráfica</button>
+                </div>   
+
+                <!-- Gráfico en tiempo real -->
+                <div class="chart-container">
+                    <canvas id="pid-chart"></canvas>
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="script-PID.js"></script>
+        </div>
+
+        <div data-content id="filtro" class="filtro">
+            <div class="container">
+                <h1>FILTROS</h1>
+                <div class="top-row">
+                <div class="left-column">
+                <h2>Filtro pasa bajas</h2>
+                <img src="images/pasabajas.png" alt="Imagen de filtro pasa bajas">
+                <div>
+                    <label for="resistencia">Resistencia (Ω):</label>
+                    <input type="number" id="resistencia" step="any" class="small-input">
+                </div>
+                <div>
+                    <label for="capacitancia">Capacitancia (nF):</label>
+                    <input type="number" id="capacitancia" step="any" class="small-input">
+                </div>
+                <div>
+                    <button onclick="calcularFrecuenciaCorte()" class="small-button">Calcular</button>
+                </div>
+                <div id="resultadoPB"></div>
+                </div>    
+
+                <div class="right-column">
+                <h2>Filtro Pasa Altas</h2>
+                <img src="images/pasaaltas.png" alt="Imagen de filtro pasa altas">
+                <div>
+                    <label for="resistenciaPA">Resistencia (Ω):</label>
+                    <input type="number" id="resistenciaPA" step="any" class="small-input">
+                </div>
+                <div>
+                    <label for="capacitanciaPA">Capacitancia (nF):</label>
+                    <input type="number" id="capacitanciaPA" step="any" class="small-input">
+                </div>
+                <div>
+                    <button onclick="calcularFrecuenciaCortePasaAltas()" class="small-button">Calcular</button>
+                </div>
+                <div id="resultadoPA"></div>
+                </div>
+                </div>
+
+                <div class="bottom-row">
+                <div class="center-column">
+                <h2>Filtro Pasa Banda</h2>
+                <img src="images/pasabanda.png" alt="Imagen de filtro pasa banda">
+                <div>
+                    <label for="resistenciaPB1">Resistencia High (Ω):</label>
+                    <input type="number" id="resistenciaPB1" step="any" class="small-input">
+                </div>
+                <div>
+                    <label for="resistenciaPB2">Resistencia Low (Ω):</label>
+                    <input type="number" id="resistenciaPB2" step="any" class="small-input">
+                </div>
+                <div>
+                    <label for="capacitanciaPB1">Capacitancia High (nF):</label>
+                    <input type="number" id="capacitanciaPB1" step="any" class="small-input">
+                </div>
+                <div>
+                    <label for="capacitanciaPB2">Capacitancia Low (nF):</label>
+                    <input type="number" id="capacitanciaPB2" step="any" class="small-input">
+                </div>
+                <div>
+                    <button onclick="calcularFrecuenciaCortePasaBanda()" class="small-button">Calcular</button>
+                </div>
+                <div id="resultadoPB1"></div>
+                </div>
+                </div>
+            </div>
+            <script src="script-filtros.js"></script>
+        </div>
+
+        <div data-content id="puertaslogicas" class="puerta">
+            <div class="container">
+                <h1>PUERTAS LOGICAS</h1>
+                <div>
+                    <button onclick="setGateType('AND')">AND</button>
+                    <button onclick="setGateType('OR')">OR</button>
+                    <button onclick="setGateType('NOT')">NOT</button>
+                </div>
+                <div class="gate-container" id="gateContainer">
+                    <div class="gate" id="gate">
+                        <p>Seleccione una puerta lógica</p>
+                    </div>
+                    <div class="inputs" id="inputs"></div>
+                    <div class="output" id="output"></div>
+                </div>
+                <script src="script-puertaslogicas.js"></script>
+            </div>
+        </div>
+
+    <!-- Más secciones si las tienes -->
+
+        <footer>
+            <!-- Pie de página -->
+        </footer>
+
+    </div>
+</body>
+</html>

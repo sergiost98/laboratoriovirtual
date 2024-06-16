@@ -1,0 +1,60 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.navbar {
+    background-color: #3251ff; /* Color de fondo de la barra */
+    color: #0f0f0f; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    display: flex; /* Para alinear los elementos horizontalmente */
+    justify-content: space-between; /* Para espaciar los elementos */
+    flex-direction: column;
+    align-items: center; /* Para centrar verticalmente los elementos */
+    width: 100%; /* Ocupar toda la página horizontalmente */
+    position: fixed; /* Fijar la barra en la parte superior */
+    top: 0; /* Alinear la barra en la parte superior */
+    left: 0; /* Alinear la barra al borde izquierdo */
+    z-index: 999; /* Asegurar que la barra esté sobre otros elementos */
+}
+
+.title {
+    font-size: 24px; /* Tamaño del texto del título */
+}
+
+.menu a {
+    color: #fff; /* Color del texto de los enlaces */
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+    margin-right: 20px; /* Espacio entre los elementos del menú */
+}
+
+
+
+body {
+	padding: 5%;
+    background-color: #eafaff;
+}
+
+.menu {
+	display: flex;
+}
+
+.menu p {
+	margin-right: 2rem;
+	cursor: pointer;
+}
+
+.content {
+	margin-top: 2rem;
+}
+
+[data-content] {
+	display: none;
+}
+
+[data-content].active {
+    display: block;
+}
