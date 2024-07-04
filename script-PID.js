@@ -64,13 +64,13 @@ function updatePID() {
 function startSimulation() {
     if (!simulationRunning) {
         simulationRunning = true;
-        pidController = new PIDController(kp, ki, kd);  // Asegúrate de que el controlador esté actualizado
+        pidController = new PIDController(kp, ki, kd);  
         resetGraph();
         intervalId = setInterval(updateGraph, 50);
     }
 }
 
-  // Función para detener la simulación
+// Función para detener la simulación
 function stopSimulation() {
     simulationRunning = false;
     clearInterval(intervalId);
@@ -127,8 +127,6 @@ function updateGraph() {
     //Parámetros del sistema
     const omega_n = 1 / tau;
 
-    //systemOutput += (K * controlSignal / omega_n) * (1 + zeta * omega_n * time) * Math.exp(-zeta * omega_n * time);
-
     // Simulación del sistema sobreamortiguado
     const exp1 = Math.exp((-zeta + Math.sqrt(zeta * zeta - 1)) * omega_n * time);
     const exp2 = Math.exp((-zeta - Math.sqrt(zeta * zeta - 1)) * omega_n * time);
@@ -137,7 +135,7 @@ function updateGraph() {
 
     time += dt;
 
-    GraficoPID.data.labels.push(time);
+    GraficoPID.data.labels.push(time.toFixed(1));
     GraficoPID.data.datasets[0].data.push(systemOutput);
     GraficoPID.data.datasets[1].data.push(Setpoint);
 

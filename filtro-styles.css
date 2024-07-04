@@ -48,9 +48,9 @@
 
 
 .filtro canvas#grafico {
-    width: 100%; /* Ajusta el ancho del canvas al 100% del contenedor */
-    height: auto; /* Permite que la altura se ajuste automáticamente */
-    display: block; /* Asegura que el canvas se muestre como bloque */
+    width: 100%;
+    height: auto; 
+    display: block; 
 }
 
 /* Centrar los títulos */

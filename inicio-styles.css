@@ -51,7 +51,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: -1px; /* Ajusta el valor para posicionar correctamente la línea */
-    width: 2px; /* Ancho de la línea vertical */
-    background-color: #000; /* Color de la línea vertical */
+    left: -1px; 
+    width: 2px; 
+    background-color: #000; 
 }

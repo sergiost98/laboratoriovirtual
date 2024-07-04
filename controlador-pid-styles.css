@@ -95,3 +95,20 @@
 .controlador-pid-container .chart-container {
     text-align: center;
 }
+
+
+.controlador-pid-container .new-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.controlador-pid-container .new-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.controlador-pid-container .new-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
