@@ -112,8 +112,6 @@ function updateGraph() {
         return; // Detener la simulación
     }
 
-    // Aquí implementarías la lógica de tu controlador PID y obtendrías la salida
-    // En este ejemplo, se utiliza una función seno como entrada
     const dt = 0.1;
     const totalTime = 15;
     const tau = 1;   // Constante de tiempo del sistema
